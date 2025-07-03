@@ -638,7 +638,7 @@ itemContainer: {
     alignItems: 'center',
     justifyContent: 'center',
     right: 20,
-    bottom: 20,
+    bottom: 50,
     backgroundColor: colors.primary,
     borderRadius: 25,
     elevation: 8, // Android shadow
