@@ -1,0 +1,17 @@
+export const configs = {
+    API_URL : 'https://www.ozoneinfotech.co.in',
+    API_URL_LOGIN : 'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/Login.php',
+    API_URL_BRANCH_DETAILS : 'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/BranchDetails.php',
+    API_URL_ACCOUNT_LIST : 'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/AccountList.php',
+    API_URL_Ledger : 'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/LedgerBook.php',
+    API_URL_LOCATION_LIST : 'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/LocationList.php',
+    API_URL_LOCATION_GROUP_LIST : 'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/LocationGroupList.php',
+    API_URL_GOODS_TYPE_LIST :'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/GoodsTypeList.php',
+    API_URL_REPORTS : 'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/Reports.php',
+    API_URL_OTHER_MATERIALS_LIST : 'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/OtherMaterialsList.php',
+    API_URL_AuctionDCRegister : 'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/ReportsAuctionDCRegister.php',
+    API_URL_AuctionRegister : 'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/ReportsAuctionRegister.php',
+    API_URL_AuctionSaleRegister : 'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/ReportsAuctionSalesRegister.php',
+    API_URL_OtherMaterialStock : 'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/ReportsOtherMaterialStock.php',
+    API_URL_PalaReceiveRegister : 'https://www.ozoneinfotech.co.in/ColdStorage/VRB_Raisins/ReportsPalaRecRegister.php',
+};
