@@ -303,14 +303,15 @@ const LedgerScreen = ({route}) => {
     <View style={styles.itemContainer}>
         <View>
             <View style={styles.itemTitle}>
-              <Text style={styles.iTitle}>{item.AuctionDate!==null?item.AuctionDate.date.slice(0, 10):''}</Text>
+              <Text style={styles.iTitle}>Date: {item.AuctionDate!==null?new Date(item.AuctionDate.date).toLocaleDateString('en-GB'):''}</Text>
             </View>
               <Text style={styles.itemDescription}>Marking No. {item.MarkingNo}</Text> 
-              <Text style={styles.itemDescription}>Details. {item.SampleDetails}</Text>
+              <Text style={styles.itemDescription}>Sample Details. {item.SampleDetails}</Text>
+              <Text style={styles.itemDescription}>Net Weight. {item.NetWeight}</Text>
               <Text style={styles.itemDescription}>Weight. {item.Weight}</Text>
             <View style={styles.subItemContainer}>
-                <Text style={styles.green}>Net Weight. {item.NetWeight}</Text> 
-                <Text style={styles.red}>Qty. {item.Quantity}</Text>
+                <Text style={styles.green}>Qty. {item.Quantity}</Text> 
+                <Text style={styles.red}>Rate. {item.Rate}</Text>
             </View>
         </View>
     </View>
@@ -320,7 +321,7 @@ const LedgerScreen = ({route}) => {
     <View style={styles.itemContainer}>
         <View>
             <View style={styles.itemTitle}>
-              <Text style={styles.iTitle}>{item.SaleTrnDate!==null?item.SaleTrnDate.date.slice(0, 10):''}</Text>
+              <Text style={styles.iTitle}>Sales Date: {item.SaleTrnDate!==null?new Date(item.SaleTrnDate.date).toLocaleDateString('en-GB'):''}</Text>
             </View>
               <Text style={styles.itemDescription}>Farmer Party. {item.FarmerPartyName}</Text>
               <Text style={styles.itemDescription}>Sales Party. {item.SalesPartyName}</Text>
@@ -402,7 +403,7 @@ const LedgerScreen = ({route}) => {
            </View>
            ) : (
            <View style={styles.inputContainerSpace}>
-                <DropdownComponent value={accountNo} onChange={(value) => setAccountNo((value===null)?0:value)} />
+                <DropdownComponent value={accountNo} onChange={(value) => setAccountNo((value===null)?'0':value)} />
            </View>
       )}
 
@@ -498,7 +499,7 @@ const styles = StyleSheet.create({
 container: {
     flex: 1, // Ensure container takes up space
     backgroundColor: colors.white,
-    padding: 20,
+    paddingHorizontal: 20,
     //justifyContent: 'center', // Center content vertically within padding
 },
 containerCentered: { // Added for centering loading indicator
@@ -557,7 +558,7 @@ itemContainer: {
     width: '100%',
   },
   iTitle: {
-    fontSize: 18,
+    fontSize: 17,
     fontFamily: fonts.Bold, // Maybe SemiBold is enough
     color: colors.primary,
   },
