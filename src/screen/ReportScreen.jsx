@@ -27,7 +27,7 @@ const fetchReportData = async ({branchCode, reportType, fdate, tdate, accountNo,
 
  const apiUrl = configs.API_URL_REPORTS;
  console.log('Report API URL:', apiUrl);
- //console.log('Request Data:', {branchCode, reportType, fdate, tdate, accountNo, goodsTypeID, locationGroupID, locationID, marketingNo});
+ console.log('Request Data:', {apiUrl, branchCode, reportType, fdate, tdate, accountNo, goodsTypeID, locationGroupID, locationID, marketingNo, pageNo});
  
   const requestBody = JSON.stringify({
     'PageNo': pageNo,
@@ -42,10 +42,9 @@ const fetchReportData = async ({branchCode, reportType, fdate, tdate, accountNo,
     'MarkingNo': marketingNo,
     }); // Convert raw data to JSON string
   
-  console.log('Request Body:', requestBody);
-
-
   try {
+    console.log('Request Body JSON:', requestBody);
+
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
@@ -240,8 +239,8 @@ const handleLocationChange = useCallback((value) => setLocation(value === null ?
       marketingNo: marketingNoVal,
       pageNo: 1,
     }).then((data) => {
-        if (data && data.length > 0) {
-          console.log('Report data received -->', data);
+      console.log('Report data received -->', data);
+        if (data) {          
           setLedgerData(data);
           // TODO: Display ledger data
         } else {
@@ -399,7 +398,7 @@ const styles = StyleSheet.create({
 container: {
     flex: 1, // Ensure container takes up space
     backgroundColor: colors.white,
-    padding: 15,
+    paddingHorizontal: 20,
     //justifyContent: 'center', // Center content vertically within padding
 },
 containerCentered: { // Added for centering loading indicator
